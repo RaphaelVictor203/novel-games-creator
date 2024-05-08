@@ -1,0 +1,10 @@
+#empty-card {
+    width: 14em;
+    height: 16.9em;
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 5em;
+    margin-top: 1em;
+    background-color: transparent;
+    border-color: transparent;
+}

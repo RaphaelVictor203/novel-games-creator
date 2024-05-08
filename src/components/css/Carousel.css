@@ -1,0 +1,5 @@
+#carousel {
+    height: 50em;
+    box-shadow: 0 4px 10px 0 rgba(155, 27, 233, 0.2), 0 6px 20px 0 rgba(155, 27, 233, 0.19);
+    z-index: 1;
+}

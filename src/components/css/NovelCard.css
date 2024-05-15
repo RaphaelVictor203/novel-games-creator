@@ -1,6 +1,6 @@
-#novel-card {
-    width: 14em;
-    height: 15em;
+#novel-card-lg {
+    width: 90%;
+    height: 95%;
     float: left;
     margin-right: 1em;
     margin-bottom: 5em;
@@ -9,19 +9,47 @@
     border-color: transparent;
 }
 
-#novel-card-image {
+#novel-card-image-lg {
     width: 100%;
     height: 16.9em;
     border-radius: .3em;
     transition: 0.4s;
 }
 
-#novel-card-image:hover {
+#novel-card-image-lg:hover {
     width: 101%;
     height: 17.5em;
     cursor: pointer;
     position: absolute;
     margin-left: -.1em;
     margin-top: -.2em;
+    transition: 0.2s;
+}
+
+#novel-card-sm {
+    width: 90%;
+    height: 95%;
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 5em;
+    margin-top: 1em;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#novel-card-image-sm {
+    width: 100%;
+    height: 13em;
+    border-radius: .3em;
+    transition: 0.4s;
+}
+
+#novel-card-image-sm:hover {
+    width: 104%;
+    height: 14em;
+    cursor: pointer;
+    position: absolute;
+    margin-left: -.2em;
+    margin-top: -.7em;
     transition: 0.2s;
 }

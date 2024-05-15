@@ -1,4 +1,4 @@
-#genre-container {
+#genre-container-lg {
     width: 98%;
     height: 15em;
     position: relative;
@@ -9,8 +9,26 @@
     font-family: Copperplate, Papyrus, fantasy;
 }
 
-#genre-title {
+#genre-title-lg {
     float:  left;
     font-size: 1.5em;
+    color: white;
+}
+
+#genre-container-sm {
+    width: 98%;
+    height: 15em;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 3em;
+    margin-bottom: 6em;
+
+    font-family: Copperplate, Papyrus, fantasy;
+}
+
+#genre-title-sm {
+    float:  left;
+    font-size: 1.2em;
+    margin-left: .3em;
     color: white;
 }

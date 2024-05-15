@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
+import MediaQuery from 'react-responsive';
+import { useMediaQuery } from 'react-responsive';
 
 import NovelCard from "./NovelCard";
 import EmptyCard from "./EmptyCard";
+import "./ResponsiveControl";
 
 var slidesToShow = 7;
 
@@ -30,12 +33,53 @@ function getNovelCards() {
     }
   }
 
-  
-
   return novelCards;
 }
 
 function NovelCardSlider() {
+  function getSlidesToShow() {
+    if (window.isDesktopOrLaptop) {
+      return 7;
+    } else 
+    if (window.isSmallScreen) {
+      return 6;
+    } else 
+    if (window.isSmallerScreen) {
+      return 5;
+    } else 
+    if (window.isSmallerScreen_1) {
+      return 3;
+    } else 
+    if (window.isBigScreen) {
+      return 2;
+    } else 
+    if (window.isTabletOrMobile) {
+      return 2;
+    } else
+    if (window.isPortrait) {
+      return 2;
+    } else
+    if (window.isRetina) {
+      return 2;
+    }
+  }
+
+  useEffect(() => {
+    function handleResize() {
+      getSlidesToShow();
+    }
+
+    // Attach the event listener to the window object
+    window.addEventListener('resize', handleResize);
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  var slidesToShow = getSlidesToShow();
+
   const [display, setDisplay] = useState(true);
 
   const settings = {
@@ -43,29 +87,54 @@ function NovelCardSlider() {
     infinite: false,
     speed: 500,
     slidesToShow: slidesToShow,
-    slidesToScroll: slidesToShow
+    slidesToScroll: slidesToShow,
+    arrows: useMediaQuery({query: '(min-width: 600px)'})
   };
   return (
-    <div className="slider-container">
-      <div
-        style={{
-          width: "97.5%",
-          height: "20em",
-          display: display ? "block" : "none",
-          margin: "0 auto"
-        }}
-      >
-        <Slider {...settings} 
+    <div>
+      <MediaQuery maxWidth="690px">
+          <div
             style={{
-                height: "19.3em",
-                backgroundColor: "rgba(87, 13, 133, .4)",
-                paddingLeft: "1.5em",
-                borderRadius: ".9em"
+              width: "97.5%",
+              height: "15.7em",
+              display: display ? "block" : "none",
+              margin: "0 auto"
             }}
-        >
-            {getNovelCards()}
-        </Slider>
-      </div>
+          >
+            <Slider {...settings} 
+                style={{
+                    height: "96%",
+                    backgroundColor: "rgba(87, 13, 133, .4)",
+                    paddingLeft: "1.5em",
+                    borderRadius: ".9em"
+                }}
+            >
+                {getNovelCards()}
+            </Slider>
+          </div>
+      </MediaQuery>
+
+      <MediaQuery minWidth={700}>
+          <div
+            style={{
+              width: "97.5%",
+              height: "20em",
+              display: display ? "block" : "none",
+              margin: "0 auto"
+            }}
+          >
+            <Slider {...settings} 
+                style={{
+                    height: "96%",
+                    backgroundColor: "rgba(87, 13, 133, .4)",
+                    paddingLeft: "1.5em",
+                    borderRadius: ".9em"
+                }}
+            >
+                {getNovelCards()}
+            </Slider>
+          </div>
+      </MediaQuery>
     </div>
   );
 }

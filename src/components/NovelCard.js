@@ -1,13 +1,23 @@
-import Button from 'react-bootstrap/Button';
+import MediaQuery from 'react-responsive';
 import Card from 'react-bootstrap/Card';
 
 import './css/NovelCard.css';
 
 function NovelCard(props) {
   return (
-    <Card id='novel-card'>
-      <Card.Img id="novel-card-image" variant="top" src={props.novelThumb} />
-    </Card>
+    <div>
+      <MediaQuery maxWidth="690px">
+        <Card id="novel-card-sm">
+          <Card.Img id="novel-card-image-sm" variant="top" src={props.novelThumb} />
+        </Card>
+      </MediaQuery>
+
+      <MediaQuery minWidth="700px">
+        <Card id="novel-card-lg">
+          <Card.Img id="novel-card-image-lg" variant="top" src={props.novelThumb} />
+        </Card>
+      </MediaQuery>
+    </div>
   );
 }
 

@@ -26,18 +26,18 @@ function GenreContainer(props) {
       </MediaQuery>
 
       <MediaQuery minWidth="700px">
-      <Container fluid="xg" id='genre-container-lg'>
-        <Row>
-          <Col>
-              <p id='genre-title-lg'>{props.genreTitle}</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <NovelCardSlider />
-          </Col>
-        </Row>
-      </Container>
+        <Container fluid="xg" id='genre-container-lg'>
+          <Row>
+            <Col>
+                <p id='genre-title-lg'>{props.genreTitle}</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <NovelCardSlider />
+            </Col>
+          </Row>
+        </Container>
       </MediaQuery>
     </div>
   );

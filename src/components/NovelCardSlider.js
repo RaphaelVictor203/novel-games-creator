@@ -5,7 +5,6 @@ import { useMediaQuery } from 'react-responsive';
 
 import NovelCard from "./NovelCard";
 import EmptyCard from "./EmptyCard";
-import "./ResponsiveControl";
 
 var slidesToShow = 7;
 

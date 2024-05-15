@@ -10,11 +10,14 @@ export default class HomePage extends Component {
             <div>
                 <MenuTop />
                 <Slider />
-                <GenreContainer genreTitle="CONTINUE PLAYING"/>
-                <GenreContainer genreTitle="NOVELS YOU SHOULD LIKE"/>
-                <GenreContainer genreTitle="TOP 10 NOVELS"/>
-                <GenreContainer genreTitle="HORROR NOVELS"/>
-                <GenreContainer genreTitle="COMEDY NOVELS"/>
+                <div style={{width: "100%", height: "50em"}}></div>
+                <div>
+                    <GenreContainer genreTitle="CONTINUE PLAYING"/>
+                    <GenreContainer genreTitle="NOVELS YOU SHOULD LIKE"/>
+                    <GenreContainer genreTitle="TOP 10 NOVELS"/>
+                    <GenreContainer genreTitle="HORROR NOVELS"/>
+                    <GenreContainer genreTitle="COMEDY NOVELS"/>
+                </div>
             </div>
         );
     }
